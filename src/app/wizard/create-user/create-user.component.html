@@ -1,0 +1,30 @@
+<form class="container" [formGroup]="user" (submit)="submit()">
+    <div class="form-group">
+        <h1>Create your App user</h1>
+    </div>
+    <div class="form-group">
+        <md-input-container>
+            <input mdInput formControlName="email" placeholder="Email" value="">
+            <md-error *ngIf="user.controls['email']?.errors?.userExist; else emailValid">Email already exists</md-error>
+            <ng-template #emailValid>
+                <md-error>Must be a valid email address</md-error>
+            </ng-template>
+        </md-input-container>
+    </div>
+    <div class="form-group">
+        <md-input-container class="form-group">
+            <input mdInput type="password" formControlName="password" placeholder="Password" value="">
+            <md-error>Password must contain a lower-case, an upper-case a number and a special character</md-error>
+        </md-input-container>
+    </div>
+    <div class="form-group">
+        <md-input-container class="form-group">
+            <input mdInput type="password" formControlName="passwordMatch" placeholder="Retype password" value="">
+            <md-error>Passwords must match</md-error>
+        </md-input-container>
+    </div>
+    <div class="form-group">
+        <button md-raised-button>Submit</button>
+    </div>
+
+</form>

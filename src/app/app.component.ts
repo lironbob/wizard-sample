@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: `
-  <h1>
-    {{title}}
-  </h1>
-  <router-outlet></router-outlet>
+    <nav>
+        <a routerLink="create-user">create-user</a> | <a routerLink="personal-details">personal-details</a> 
+    </nav>
+      <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
 })
