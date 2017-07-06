@@ -11,13 +11,16 @@ import {CreateUserComponent} from './wizard/create-user/create-user.component';
 import {PersonalDetailsComponent} from './wizard/personal-details/personal-details.component';
 import {MaterialModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BreadcrumbModule} from 'primeng/primeng';
+import { CompletionComponent } from './wizard/completion/completion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WizardComponent,
     CreateUserComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+    CompletionComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    BreadcrumbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

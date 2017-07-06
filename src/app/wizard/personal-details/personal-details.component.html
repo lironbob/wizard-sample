@@ -1,3 +1,26 @@
-<p>
-  personal-details works!
-</p>
+<form class="container" [formGroup]="info" (submit)="submit()">
+    <div class="form-group">
+        <h1>Enter personal information</h1>
+    </div>
+    <div *ngFor="let ctrl of info.controls | keys">
+        <div *ngIf="info.controls[ctrl].controls; else input" [formGroupName]="ctrl">
+            <div *ngFor="let subCtrl of info.controls[ctrl].controls | keys">
+                <md-input-container>
+                    <input mdInput [formControlName]="subCtrl" [placeholder]="subCtrl" value=""/>
+                    <md-error>Must enter a valid {{subCtrl}}</md-error>
+                </md-input-container>
+            </div>
+        </div>
+        <ng-template #input>
+            <md-input-container>
+                <input mdInput [formControlName]="ctrl" [placeholder]="ctrl" value=""/>
+                <md-error>Must enter a valid {{ctrl}}</md-error>
+            </md-input-container>
+        </ng-template>
+    </div>
+    <div class="form-group">
+        <button md-button (click)="back()" type="button">Back</button>
+        <button md-raised-button type="submit">Next</button>
+    </div>
+
+</form>

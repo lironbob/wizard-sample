@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mock": "./node_modules/.bin/json-server mock/db.json -w"
+    "mock": "./node_modules/.bin/json-server mock/db.json --middlewares mock/singular.js -w"
   },
   "private": true,
   "dependencies": {
@@ -24,8 +24,10 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
     "ng-validators": "^0.2.1",
     "ngx-validators": "^3.0.0",
+    "primeng": "^4.1.0-rc.3",
     "rxjs": "^5.1.0",
     "trowel-core": "^4.0.4",
     "trowel-forms": "^2.0.3",

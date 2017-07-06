@@ -12,6 +12,7 @@ export class UserAsyncService implements AsyncValidator {
   validate(c: AbstractControl): Observable<ValidationErrors | null> {
     const params: URLSearchParams = new URLSearchParams();
     params.set('email', c.value);
+    params.set('singular', '1');
 
     const requestOptions = new RequestOptions();
     requestOptions.params = params;
@@ -20,7 +21,8 @@ export class UserAsyncService implements AsyncValidator {
       this.http.get(`/api/users`, requestOptions)
         .map(res => res.json())
         .subscribe(data => {
-          if (data.length) {
+          console.log('data', data);
+          if (data.email) {
             ob.next({
               'userExist': true
             });

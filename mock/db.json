@@ -1,4 +1,16 @@
 {
   "users": [
+    {
+      "email": "lironb@ui.co.il",
+      "password": "aA1!",
+      "id": 1,
+      "first name": "Liron",
+      "last name": "Boberman",
+      "contact": {
+        "home": "",
+        "mobile": "",
+        "address": ""
+      }
+    }
   ]
 }
